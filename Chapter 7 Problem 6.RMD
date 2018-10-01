@@ -1,0 +1,51 @@
+---
+title: "Chapter 7 Problem 6"
+author: "Andira Putri"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+#### In this exercise, you will further analyze the `Wage` data set considered throughout this chapter.
+
+#### a. Perform polynomial regression to predict wage using age. Use cross-validation to select the optimal degree d for the polynomial. What degree was chosen, and how does this compare to the results of hypothesis testing using ANOVA? Make a plot of the resulting polynomial fit to the data.
+
+```{r}
+set.seed(1)
+library(ISLR)
+data(Wage)
+
+#perform polynomial regression up to degree 5
+fit.1=lm(wage???age ,data=Wage) #linear
+fit.2=lm(wage???poly(age,2),data=Wage) #quadratic  
+fit.3=lm(wage???poly(age,3),data=Wage) #cubic
+fit.4=lm(wage???poly(age,4),data=Wage) #quartic
+fit.5=lm(wage???poly(age,5),data=Wage) #quintic
+anova(fit.1,fit.2,fit.3,fit.4,fit.5)
+```
+
+The linear and quadratic models are not sufficient because their p-values are close to 0. The quintic model has a rather high p-value at 0.37. The ANOVA table suggests that the cubic and quartic models are the best ones. Now, let's use cross-validation methods to pick the best among those two...
+
+```{r}
+set.seed(1)
+library(ISLR)
+library(boot)
+cv=rep(0,5)
+
+for (i in 1:5) {
+  fit=glm(wage???poly(age,i),data=Wage)
+  cv[i]=cv.glm(Wage,fit,K=5)$delta
+}
+
+plot(cv,type="b")
+```
+
+Cross-validation supports that the fourth-degree polynomial has the lowest estimated error.
+
+From both the ANOVA table and CV, we conclude that the quartic model is the best one.
+
+#### b. Fit a step function to predict wage using age, and perform cross validation to choose the optimal number of cuts. Make a plot of the fit obtained.
+
+```{r}
+```
+
