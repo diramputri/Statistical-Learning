@@ -1,5 +1,4 @@
 #Chapter 6: Linear Model Selection and Regularization
-#I want to put more focus on this lab in particular b/c I struggled significantly with Chapter 6. 
 
 #Best Subset Selection
 
