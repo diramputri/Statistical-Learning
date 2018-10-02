@@ -1,7 +1,7 @@
 # Statistical-Learning
 http://www-bcf.usc.edu/~gareth/ISL/
 
-### Chapters
+### Chapters worked on in repo
 
 * 2 - Statistical Learning
 * 3 - Linear Regression
