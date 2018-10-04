@@ -1,0 +1,37 @@
+---
+title: "Chapter 10 Problem 9"
+author: "Andira Putri"
+output: pdf_document
+---
+
+#### Consider the `USArrests` data. We will now perform hierarchical clustering on the states.
+
+#### a.) Using hierarchical clustering with complete linkage and Euclidean distance, cluster the states.
+
+```{r}
+df=USArrests
+hc.comp=hclust(dist(df),method="complete")
+plot(hc.comp,main="Complete Linkage",xlab="",sub="",cex=0.9,hang=-1)
+```
+
+#### b.) Cut the dendrogram at a height that results in three distinct clusters. Which states belong to which clusters?
+
+```{r}
+cutree(hc.comp,3)
+table(cutree(hc.comp,3))
+```
+
+#### c.) Hierarchically cluster the states using complete linkage and Euclidean distance, after scaling the variables to have standard deviation one.
+
+```{r}
+df.scaled=scale(df)
+hc.comp.sc=hclust(dist(df.scaled),method="complete")
+plot(hc.comp.sc,main="Complete Linkage -- Scaled",xlab="",sub="",cex=0.9,hang=-1)
+```
+
+#### d.) What effect does scaling the variables have on the hierarchical clustering obtained? In your opinion, should the variables be scaled before the inter-observation dissimilarities are computed? Provide a justification for your answer?
+
+```{r}
+cutree(hc.comp.sc,3)
+table(cutree(hc.comp.sc,3))
+```

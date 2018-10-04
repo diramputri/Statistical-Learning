@@ -1,0 +1,42 @@
+---
+title: "Chapter 10 Problem 10"
+author: "Andira Putri"
+output: pdf_document
+---
+
+#### In this problem, you will generate simulated data and then perform PCA and K-means clustering on the data.
+
+#### a.) Generate a simulated data set with 20 observations in each of three classes (i.e 60 observations total), and 50 variables.
+
+```{r}
+```
+
+#### b.) Perform PCA on the 60 observations and plot the first two principal component score vectors. Use a different color to indicate the observations in each of the three classes. If the classes appear separated in this plot, then continue on to part (c). If not, then return to part (a) and modify the simulation so that there is a greater separation between the three classes.
+
+```{r}
+```
+
+#### c.) Perform K-means clustering of the observations with K=3. How well do the clusters that you obtained in K-means clustering compare to the true class labels?
+
+```{r}
+```
+
+#### d.) Perform K-means clustering with K=2. Describe your results.
+
+```{r}
+```
+
+#### e.) Perform K-means clustering with K=4. Describe your results.
+
+```{r}
+```
+
+#### f.) Perform K-means clustering with K=3 on the first 2 principal component score vectors, rather than on the raw data. Comment on the results.
+
+```{r}
+```
+
+#### g.) Using the `scale()` function, perform K-means clustering wit K=3 on the data fter scaling each variable to have standard deviation 1. How do the results compare to those obtained in (b)? Explain.
+
+```{r}
+```
