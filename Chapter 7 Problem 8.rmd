@@ -136,7 +136,7 @@ lines(weight.grid,pred$fit-2*pred$se,col="blue",lty="dashed")
 
 GAMs extend the standard linear model by allowing non-linear functions for each of the variables while still maintaining additivity. There is no need to manually transform the variables since we can model non-linear relationships, we can make more accurate predictions than linear regression, and we can still examine the effect of each observation on Y individually while fixing other predictors. However, we cannot account for any interactions unless we manually add them in.
 
-For our GAM on the `Auto` data set, I use three predictors: `weight`,`horsepower`, and `horsepower`. Each predictor has 4 degrees of freedom.
+For our GAM on the `Auto` data set, I use three predictors: `weight`, `displacement`, and `horsepower`. Each predictor has 4 degrees of freedom.
 
 ```{r}
 library(gam)
