@@ -90,7 +90,7 @@ lasso.cv=cv.glmnet(train.mat,train.set$Apps,alpha=1,lambda=lambda)
 lambda.best=lasso.cv$lambda.min
 lambda.best
 #Compute test error
-lasso.pred=predict(ridge,test.mat,alpha=1,s=lambda.best)
+lasso.pred=predict(lasso,test.mat,alpha=1,s=lambda.best)
 lasso.MSE=mean((test.set$Apps-lasso.pred)^2)
 lasso.MSE
 ```
