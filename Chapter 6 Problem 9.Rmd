@@ -95,7 +95,7 @@ lasso.MSE=mean((test.set$Apps-lasso.pred)^2)
 lasso.MSE
 ```
 
-So far, our test MSEs are in the following order: Lasso << Ridge Regression < Least Squares
+So far, our test MSEs are in the following order: Ridge Regression < Least Squares < Lasso
 
 #### e.) Fit a PCR model on the training set, with M (number of components) chosen by cross-validation, and report the test error obtained, along with the value of M selected by cross-validation.
 
@@ -158,7 +158,7 @@ Here are our test MSEs:
 
 * Ridge Regression - 1101724
  
-* Lasso - 1096418
+* Lasso - 1144529
 
 * PCR - 1609171
 
@@ -166,4 +166,4 @@ Here are our test MSEs:
 
 From least to greatest, here are the performances of each methodology in terms of minimizing error:
 
-Lasso < Ridge Regression < Least Squares < PLS <<< PCR
+PLS < Ridge Regression < Least Squares < Lasso < PCR
